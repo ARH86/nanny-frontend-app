@@ -1,18 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>{{ message }}</h1>
   </div>
 </template>
 
+<style>
+  body {
+    background-color: lightblue;
+    
+
+  }
+
+</style>
+
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  var axios = require ('axios');
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
-}
+  data: function() {
+    return {
+      message: "The Caretaker App"
+    };
+  },
+  created: function() {
+    axios
+    .get("http://localhost:3000/api/jobs")
+    .then(function(response) { 
+      this.jobs = response.data;
+    }.bind(this));
+
+  },
+  methods: {},
+  computed: {}
+};
 </script>
