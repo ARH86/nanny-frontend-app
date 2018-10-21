@@ -1,29 +1,25 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
+import Signup from "./views/Signup.vue";
+import Activity from './views/Activity.vue';
+import Login from "./views/Login.vue";
+import Logout from "./views/Logout.vue";
+import ActivitiesNew from "./views/ActivitiesNew.vue";
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/feed',
-      name: 'feed',
-      
-      path: '/about',
-      name: 'about',
+    { path: '/', name: 'home', component: Home},
+    { path: '/activity', name: 'activity', component: Activity },
+    { path: "/signup", name: "signup", component: Signup },
+    { path: "/login", name: "login", component: Login },
+    { path: "/logout", name: "logout", component: Logout },
+    { path: "/job_activities/new", name: "job-activities-new", component: ActivitiesNew}
+
     
 
     
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
   ]
-})
+});
