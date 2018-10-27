@@ -59,9 +59,9 @@ export default {
     .then(response => {
       this.$router.push("/jobactivities/" + response.data.id);
     });
-    .catch(error => {
-      this.errors = error.response.data.errors;
-    });
+    // .catch(error => {
+    //   this.errors = error.response.data.errors;
+    // });
   },
   methods: {},
   computed: {}

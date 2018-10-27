@@ -3,7 +3,7 @@
     <div v-for="job_activity in job_activities">
       <h5 class="card-title">Activitiy id: {{ job_activity.job_activity_id }}</h5>
       <h5 class="card-title">Start time: {{ job_activity.start_time }}</h5>
-      <h5 class="card-title">End time: {{ job_activity.duration }}</h5>
+      <h5 class="card-title">Duration: {{ job_activity.duration }}</h5>
       <h5 class="card-title">Child id: {{ job_activity.job_id }}</h5>
     </div>
   </div>
