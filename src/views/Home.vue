@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <div v-for="job in jobs">
-      <h5 class="card-title">Job id: {{ job.job_id }}</h5>
+      <router-link v-bind:to="'/jobs/' + job.id">Click Here</router-link>
+      <h5 class="card-title">Job id: {{ job.id }}</h5>
       <h5 class="card-title">Start time: {{ job.start_time }}</h5>
       <h5 class="card-title">End time: {{ job.end_time }}</h5>
       <h5 class="card-title">Child id: {{ job.child_id }}</h5>
@@ -28,7 +29,9 @@ export default {
       this.jobs = response.data;
     });
   },
-  methods: {},
+  methods: {
+   
+  },
   computed: {}
 };
 </script>
