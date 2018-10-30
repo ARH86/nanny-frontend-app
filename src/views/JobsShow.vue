@@ -1,10 +1,11 @@
 <template>
   <div class="JobsShow">
-    <ul>
-    <h1>{{ job.id }}</h1>
-    <h1>{{ job.job_activities }}</h1>
-    <h4>{{ job.job_activities }}</h4>
-    </ul>
+
+    <div v-for="job_activity in job.job_activities">
+      <h4>{{ job_activity.id }}</h4>
+      <h4>{{ job_activity.start_time }}</h4>
+      <h4>{{ job_activity.duration }} Minutes</h4>
+    </div>
   </div>
 </template>
 
@@ -18,7 +19,8 @@ export default {
   data: function() {
     return {
             job: [],
-            
+
+
                    
                   
     };
