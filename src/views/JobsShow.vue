@@ -1,15 +1,26 @@
+   
 <template>
   <div class="JobsShow">
-
-    <div v-for="job_activity in job.job_activities">
-      <h4>{{ job_activity.id }}</h4>
-      <h4>{{ job_activity.start_time }}</h4>
-      <h4>{{ job_activity.duration }} Minutes</h4>
-    </div>
-  </div>
+        <div v-for="job_activity in job.job_activities">
+          <ul>
+            <li>Activity: {{ job_activity.activities.name}} </li>
+            <li>Duration: {{ job_activity.duration }} Minutes </li>
+            <li>{{ job_activity.activities.activity_id}} </li>
+            <br>
+            <li>{{ job_activity.id }}</li>
+            <li>{{ job_activity.start_time }} </li>
+          </ul>
+        </div>
+      </div>
 </template>
+  
 
 <style>
+    li {
+      display: inline;
+      
+    }
+    
 </style>
 
 <script>
@@ -19,6 +30,7 @@ export default {
   data: function() {
     return {
             job: [],
+
 
 
                    

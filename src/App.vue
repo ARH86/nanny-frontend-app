@@ -46,7 +46,7 @@
                       <option value="3">Hindi</option>
                     </select>
                   </li>
-                  <li><i class="fa fa-unlock-alt bg-color-5" aria-hidden="true"></i> <a href='#loginModal' data-toggle="modal" >Login</a><span>or</span><a href='#createAccount' data-toggle="modal">Create an account</a></li>
+                  <li><i class="fa fa-unlock-alt bg-color-5" aria-hidden="true"></i> <a href='#loginModal' data-toggle="modal" >Login</a><span>or</span><a href='#/createAccount' data-toggle="modal">Create an account</a></li>
                   <li class="cart-dropdown">
                     <a href="#" class="bg-color-6 shop-cart" >
                       <i class="fa fa-shopping-basket " aria-hidden="true"></i>
@@ -391,6 +391,73 @@
           </div>
         </div>
       </nav>
+ 
+        
+      <!-- <div class="modal fade customModal" id="loginModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="panel panel-default formPanel">
+              <div class="panel-heading bg-color-1 border-color-1">
+                <h3 class="panel-title">Login</h3>
+              </div>
+              <div class="panel-body">
+                <form action="#" method="POST" role="form">
+                  <div class="form-group formField">
+                    <input type="text" class="form-control" placeholder="User name">
+                  </div>
+                  <div class="form-group formField">
+                    <input type="password" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group formField">
+                    <input type="submit" class="btn btn-primary btn-block bg-color-3 border-color-3" value="Log in">
+                  </div>
+                  <div class="form-group formField">
+                    <p class="help-block"><a href="#">Forgot password?</a></p>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<script type="application/javascript">
+        import axios from "axios";
+
+        export default {
+          template: "#loginModal",
+          data: function() {
+            return {
+              email: "",
+              password: "",
+              errors: []
+            };
+          },
+          methods: {
+            submit: function() {
+              var params = {
+                email: this.email,
+                password: this.password
+              };
+              axios
+                .post("http://localhost:3000/api/sessions", params)
+                .then(response => {
+                  axios.defaults.headers.common["Authorization"] =
+                    "Bearer " + response.data.jwt;
+                  localStorage.setItem("jwt", response.data.jwt);
+                  this.$router.push("/");
+                })
+                .catch(error => {
+                  this.errors = ["Invalid email or password."];
+                  this.email = "";
+                  this.password = "";
+                });
+            }
+          }
+        };
+        </script> -->
+
+
+
     </header>
 
     <router-view/>
@@ -433,7 +500,7 @@
             </div>
           </div>
       </footer>
-  </div>
+  </div>  
 </template>
 
 <style>
