@@ -5,6 +5,9 @@ import Activity from './views/Activity.vue';
 import ActivitiesNew from "./views/JobActivitiesNew.vue";
 import JobsShow from "./views/JobsShow.vue";
 
+import ChildrenIndex from "./views/ChildrenIndex.vue";
+import ChildShow from "./views/ChildShow.vue";
+
 import Signup from "./views/Signup.vue";
 import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
@@ -18,6 +21,8 @@ export default new Router({
     { path: '/activities', name: 'activities', component: Activity },
     { path: "/job_activities_new/", name: "job-activities-new", component: ActivitiesNew},
     { path: '/jobs/:id', name: 'jobs-show', component: JobsShow},
+    { path: '/children', name: 'children-index', component:ChildrenIndex},
+    { path: '/children/:id', name:'children-show', component:ChildShow},
    
 
     { path: "/signup", name: "signup", component: Signup },
