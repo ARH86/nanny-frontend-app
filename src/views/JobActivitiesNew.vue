@@ -34,7 +34,7 @@
 </style>
 
 <script>
-  import axios from "axios";
+  var axios = require ("axios");
 
 export default {
   data: function() {

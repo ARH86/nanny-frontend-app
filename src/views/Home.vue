@@ -30,24 +30,41 @@
 
     <div v-for="job in jobs">
       <router-link v-bind:to="'/jobs/' + job.id">Click Here</router-link>
-      |
-      <button v-bind:to="'/jobs/' + job.id">Remove</button>
       <h5 class="card-title">Job id: {{ job.id }}</h5>
       <h5 class="card-title">Start time: {{ job.start_time }}</h5>
       <h5 class="card-title">End time: {{ job.end_time }}</h5>
       <h5 class="card-title">Child id: {{ job.child_id }}</h5>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Remove Job
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Remove Job</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" v-on:click="remove(job.id)" class="btn btn-primary" v-model="job.job_id" >Delete Job</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
     <br>
   </div>
 </template>
 <style>
 </style>
-  <body>
-    
-
-
-
-  </body>
 
 <script>
 var axios = require('axios');
@@ -91,7 +108,14 @@ export default {
       .catch(error => {
         this.error = error.response.data.errors;
       });
-    }
+    },
+      remove: function(jobId) {
+      axios 
+      .delete("http://localhost:3000/api/jobs/" + jobId)
+      .then(response => {
+        location.reload();
+      });
+    },
    
   },
   computed: {}
