@@ -59,6 +59,29 @@
         <li>Start Time: {{ job_activity.start_time }} </li>
       </ul>
     </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Remove Job
+    </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" v-on:click="remove()" >Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
   </div>
 </template>
   
@@ -116,12 +139,19 @@ export default {
       .then(response => {
         location.reload();
         // this.$router.push("/job_activities/" + response.data.id);
-   
       })
       .catch(error => {
         this.error = error.response.data.errors;
       });
-    } 
+    },
+
+    remove: function() {
+      axios
+      .delete("http://localhost:3000/api/jobs/" + this.$route.params.id)
+      .then(response => {
+        this.$router.push("/");
+      })
+    },
   },
   computed: {}
 };
