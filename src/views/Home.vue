@@ -27,19 +27,43 @@
         </div>
       </form>
     </div>
+      <div class="jobFilter">
+        <input v-model="jobFilter" list="jobs" placeholder="search">
+        <datalist></datalist>
+      </div>
+    <div class="jobs_feed">
+
       <div v-for="job in jobs">
         <router-link v-bind:to="'/jobs/' + job.id">Job: {{ job.id }}</router-link>
-      
-        <!--   <h5 class="card-title">Job id: {{ job.id }}</h5> -->
-          <h5 class="card-title">Start time: {{ job.start_time }}</h5>
+          <h4 class="card-title" id="start_time">Start time: {{ job.start_time }}</h4>
           <h5 class="card-title">End time: {{ job.end_time }}</h5>
           <h5 class="card-title">Child id: {{ job.child_id }}</h5>
+          <h5 class="card-title">Job id: {{ job.id }}</h5>
       </div>
+    </div>
     <br>
   </div>
-
 </template>
 <style>
+  div.jobs_feed {
+
+      margin-left: auto;
+      margin-right: auto;
+      background-color: rgb(132, 190, 214);
+      width: 600px;
+      height: 400px;
+      overflow: scroll;
+      font-style: serif;
+      font-size: 20px;
+      text-align: center;
+      border-style: double;
+
+      }
+    div.jobFilter {
+                  
+
+    }
+
 </style>
 
 <script>
@@ -52,7 +76,8 @@ export default {
       children: [],
       start_time: "",
       end_time: "",
-      child_id: ""
+      child_id: "",
+      jobFilter: ""
 
     };
   },
