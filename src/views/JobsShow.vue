@@ -1,27 +1,29 @@
    
 <template>
   <div class="JobsShow">
+      <!-- <div class="image_1">
+         <img src="http://www.naturesgreengrocer.com/sites/default/files/images/article/active_kids.png" alt="" style="width:700px;height:200px;"> 
+      </div> -->
     <br>
     <div class="entry">
       <h4> Add New Activity:</h4>
-      <form>
+      <form >
         <br>
         <h5>Select Activity:</h5>
           <div class="form-group">
             <!-- <input type="text" v-model="job_activity" placeholder="name">
             {{ job_activity.name }} -->
 
-        <select v-model="activity_id">
-            <option v-for="activity in activities" v-bind:value="activity.activity_id">
-              {{ activity.name }}
-            </option>
-        </select>
-
-          </div>
-          <br>
+           <select v-model="activity_id">
+              <option v-for="activity in activities" v-bind:value="activity.activity_id">
+                {{ activity.name }}
+              </option>
+          </select>
+        </div>
+        <br>
           <div class="form-group"> 
             <h5>Duration:</h5>    
-            <select name="duration" v-bind:value="duration" v-model="duration">
+              <select name="duration" v-bind:value="duration" v-model="duration">
                 <option value=15>15</option>
                 <option value=30>30</option>
                 <option value=45>45</option>
@@ -30,9 +32,9 @@
                 <option value=120>2 hours</option>
                 <option value=150>2 1/2 hours</option>
                 <option value=180>3 hours</option>
-            </select>
-            <br>
-          </div>   
+              </select>
+              <br>
+          </div>  
           <br>
           <div class="form-group" > 
             <h5>Enter Start Date: </h5>
@@ -49,16 +51,21 @@
     </div>
     <br>
     <br>
-    <div v-for="job_activity in job.job_activities">
-      <ul>
-        <li>Activity: {{ job_activity.activities.name}} </li>
-        <li>Duration: {{ job_activity.duration }} Minutes </li>
-        <li>{{ job_activity.activities.activity_id}} </li>
-        <br>
-        <li>{{ job_activity.id }}</li>
-        <li>Start Time: {{ job_activity.start_time }} </li>
-      </ul>
-    </div>
+  
+      <div class="activities_feed">
+        <div>
+          <div class="font_feed" v-for="job_activity in job.job_activities">
+            <ul>
+              <li>Activity: {{ job_activity.activities.name}} </li>
+              <li>Duration: {{ job_activity.duration }} Minutes </li>
+              <li>{{ job_activity.activities.activity_id}} </li><br>
+              <li>{{ job_activity.id }}</li>
+              <li>Start Time: {{ job_activity.start_time }} </li>
+              <br>
+            </ul>
+          </div>
+        </div>
+      </div>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       Remove Job
     </button>
@@ -91,11 +98,49 @@
       display: inline;
       
     }
-    .entry {
-        padding-left: 20px;
-
-    }
    
+
+    
+    div.activities_feed {
+                        background-color: lightblue;
+                            width: 700px;
+                            height: 700px;
+                            overflow: scroll;
+                            align-content: center;
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-top: auto;
+                            margin-top: 300px;
+                            border-style: double;
+                            border-width: 10px;
+                            border-color: rgb(132, 190, 214);
+                            font: red;
+
+                        }
+                        div.font_feed {
+                                      color: rgb(234, 112, 102);
+                                      font-size: 20px;
+
+
+
+                        }
+                        div.entry {
+                                          margin-left: 1100px;
+                                          padding-top: 50px;
+                                          font-style: serif;
+
+  
+
+                        }
+                        div.image_1 {
+                                    margin-left: 100px;
+                                    padding-top: 100px;
+
+
+
+
+                        }
+                     
     
 </style>
  

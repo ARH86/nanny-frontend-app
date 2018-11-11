@@ -1,44 +1,42 @@
 <template>
   <div class="home">
     <div class="entry">
-      <form>
-       <br>
-       <h4>Schedule an event to track</h4>
-       <div class="form-group">
-          <select v-model="child_id">
-            <option v-for="child in children" v-bind:value="child.id">
-              {{ child.name}}
-            </option>
-          </select>
-          <br>
-          <br>
-          <div class="form-group">
-             <input type="datetime-local" v-model="start_time">    
-          </div>
+      <div column="3">   
+        <form id="addJob">
+         <br>
+         <h4>Schedule an event to track</h4>
+         <div class="form-group">
+            <select v-model="child_id" >
+              <option v-for="child in children" v-bind:value="child.id">
+                {{ child.name}}
+              </option>
+            </select>
+            <br>
+            <br>
             <div class="form-group">
-              <input type="datetime-local" v-model="end_time">
+               <input type="datetime-local" v-model="start_time">    
             </div>
-             <div>
-                <button type="submit" v-on:click="submit()">Submit</button>
-                |
-                <input type="reset">      
-             </div>
-             <br>
-        </div>
-      </form>
-    </div>
-      <div class="jobFilter">
-        <input v-model="jobFilter" list="jobs" placeholder="search">
-        <datalist></datalist>
+              <div class="form-group">
+                <input type="datetime-local" v-model="end_time">
+              </div>
+                <div>
+                  <button type="submit" v-on:click="submit()">Submit</button>
+                  |
+                  <input type="reset">      
+                </div>
+                <br>
+            </div>  
+        </form>
       </div>
-    <div class="jobs_feed">
-
-      <div v-for="job in jobs">
-        <router-link v-bind:to="'/jobs/' + job.id">Job: {{ job.id }}</router-link>
-          <h4 class="card-title" id="start_time">Start time: {{ job.start_time }}</h4>
-          <h5 class="card-title">End time: {{ job.end_time }}</h5>
-          <h5 class="card-title">Child id: {{ job.child_id }}</h5>
-          <h5 class="card-title">Job id: {{ job.id }}</h5>
+    </div>
+    <div column="6">
+      <div class="jobs_feed">
+        <div v-for="job in jobs">
+          <router-link class="card-title" v-bind:to="'/jobs/' + job.id">Job: {{ job.id }}</router-link>
+            <h4 class="card-title" id="start_time">Start time: {{ job.start_time }}</h4>
+            <h5 class="card-title">End time: {{ job.end_time }}</h5>
+            <h5 class="card-title">Child id: {{ job.child_id }}</h5>
+        </div>
       </div>
     </div>
     <br>
@@ -51,18 +49,31 @@
       margin-right: auto;
       background-color: rgb(132, 190, 214);
       width: 600px;
-      height: 400px;
+      height: 500px;
       overflow: scroll;
       font-style: serif;
-      font-size: 20px;
       text-align: center;
       border-style: double;
+      border-color: rgb(234, 112, 102);
+      border-width: 10px;
+
 
       }
-    div.jobFilter {
-                  
+      #addJob {
+              padding-right: 10px;
+              padding-left: 10px;
+              border: double;
+              border-width: 5px;
+              border-color: rgb(234, 112, 102);
+              background: rgb(239, 194, 74);
 
-    }
+
+      }
+      div.home {
+        background-color: rgb(46, 60, 67);
+      }
+
+
 
 </style>
 

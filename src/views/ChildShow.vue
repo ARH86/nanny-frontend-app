@@ -3,12 +3,14 @@
     <div class="container">
       <br>
       <div v-model="child">
-        <ul>
-          <li>Name: {{ child.name }} </li>
-          <li>Age: {{ child.age }} </li>
-          <li>Gender: {{ child.gender }} </li>
-          <li>Child id: {{ child.id }} </li>
-        </ul>
+        <div class="column" id="child_info">
+          <ul>
+            <li>Name: {{ child.name }} </li><br><br>
+            <li>Age: {{ child.age }} </li><br><br>
+            <li>Gender: {{ child.gender }} </li><br><br>
+            <li>Child id: {{ child.id }} </li><br>
+          </ul>
+        </div>
       </div>
     </div>
      <div class="form-group">
@@ -43,6 +45,33 @@
 </template>
 
 <style>
+  #child_info {
+              margin-left: 400px;
+              margin-right: 400px;
+              border: double;
+              border-width: 20px;
+              background: rgb(132, 190, 214);
+              content: center;
+              width: 400px;
+              height: 300px;
+              font-size: 40px;
+              font-family: "Times New Roman", Times, serif;
+              padding-left: 80px;
+              padding-top: 70px;
+
+            }
+
+            div.ChildShow {
+                            background: rgb(46, 60, 67);
+                            height: 700px;
+                            padding-top: 100px;
+
+
+            }
+            #button_delete {
+                            padding-left: 300px;
+            }
+
 </style>
 
 <script>

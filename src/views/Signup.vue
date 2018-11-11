@@ -1,8 +1,11 @@
 
+<div id="signup_background">
+  
 
 <template>
   <div class="signup">
     <div class="container">
+      <div class="card" id="signup_form">
       <form v-on:submit.prevent="submit()">
         <h1>Signup</h1>
         <ul>
@@ -24,12 +27,29 @@
           <label>Password confirmation:</label>
           <input type="password" class="form-control" v-model="passwordConfirmation">
         </div>
+        <br>
         <input type="submit" class="btn btn-primary" value="Submit">
       </form>
+      </div>
     </div>
   </div>
+  </div>
 </template>
+</div>
+  <style>
+     div.signup {
+                background-color: red;
+                padding-top: 150px;
+                padding-bottom: 200px;
+                padding-left: auto;
+                padding-right: auto;
+              
+                }
+    div.signup_background  {
+        background-color: rgb(46, 60, 67);
+                    }
 
+  </style>
 <script>
 import axios from "axios";
 
