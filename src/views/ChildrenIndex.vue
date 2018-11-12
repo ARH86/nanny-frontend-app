@@ -2,7 +2,7 @@
   <div class="ChildrenIndex">
     <ul>
       <br>
-      <div class="card">
+      <div class="column-8">
         <div class="children_name_list" style="height: 500px">
           <div v-for="child in children" v-bind:value="child.id">
             <router-link v-bind:to="'/children/' + child.id"> 
@@ -12,7 +12,7 @@
         </div>
       </div>
     </ul>
-    <div class="container" id="addChild">
+    <div class="column" id="addChild">
       <div class="card">
         <form>
           <h1>Add Child</h1>
@@ -49,20 +49,39 @@
 <style>
 
     div.ChildrenIndex{
+                    padding-top: 100px;
+                    padding-bottom: 200px;
                     background: rgb(46, 60, 67);
+                    column-count: 3;
     }
     div.children_name_list {
-                            background-color: lightblue;
+                            background-color: rgb(132, 190, 214);
                             margin-left: 20px;
-                            width: 200px;
-                            height: 200px;
+                            margin-right: 20px;
+                            padding-left: 70px;
+                            padding-right: 50px;
+                            padding-top: 20px;
+                            padding-bottom: 60px;
+                            width: 300px;
+                            height: 50px;
                             overflow: scroll;
                             border: double;
-                            display: block;
+                            border-width: 10px;
+                            font-size: 40px;
+                            font-weight: bold;
+                            font-family: "Times New Roman", Times, serif;
+                            text-transform: capitalize;
+                            letter-spacing: 5px;
+                            line-height: 50px;
+                            word-spacing: 5px;
+
+                            
                             }
     #addChild {
-              padding-top: 150px;
+              padding-top: 100px;
               padding-bottom: 200px;
+              width: 650px;
+              padding-right: 200px;
 
     }
 </style>

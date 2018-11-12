@@ -1,7 +1,10 @@
 <template>
   <div class="home">
+    <div>
+        <!-- make message to about the feed or scheduling a job -->
+    </div>
     <div class="entry">
-      <div column="3">   
+      <div column>   
         <form id="addJob">
          <br>
          <h4>Schedule an event to track</h4>
@@ -33,9 +36,10 @@
       <div class="jobs_feed">
         <div v-for="job in jobs">
           <router-link class="card-title" v-bind:to="'/jobs/' + job.id">Job: {{ job.id }}</router-link>
-            <h4 class="card-title" id="start_time">Start time: {{ job.start_time }}</h4>
-            <h5 class="card-title">End time: {{ job.end_time }}</h5>
-            <h5 class="card-title">Child id: {{ job.child_id }}</h5>
+            <h4 class="card-title">Start time: {{ job.start_time }}</h4>
+            <h4 class="card-title">End time: {{ job.end_time }}</h4>
+            <h4 class="card-title">Child id: {{ job.child_id }}</h4>
+           <!--  <h4 class="card-title">Child Name: {{ child.name }}</h4> ****add name *** -->
         </div>
       </div>
     </div>
@@ -56,12 +60,14 @@
       border-style: double;
       border-color: rgb(234, 112, 102);
       border-width: 10px;
+      font-family: "Times New Roman", Times, serif;
 
 
       }
       #addJob {
               padding-right: 10px;
               padding-left: 10px;
+              width: 300px;
               border: double;
               border-width: 5px;
               border-color: rgb(234, 112, 102);
@@ -71,6 +77,9 @@
       }
       div.home {
         background-color: rgb(46, 60, 67);
+        column-count: 3;
+        padding-top: 100px;
+        padding-bottom: 250px;
       }
 
 

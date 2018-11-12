@@ -74,12 +74,12 @@ jQuery(document).ready(function(){
     );
   }
 
-/*======== 5. CART ========*/
-$('.cart-dropdown a').on('click',function() {
-    $('.dropdown-menu').toggleClass('display-block');
-    $('.cart-dropdown a i').toggleClass('fa-close').toggleClass('fa-shopping-basket');
-    $('.badge').toggleClass('display-none');
-});
+// /*======== 5. CART ========*/
+// $('.cart-dropdown a').on('click',function() {
+//     $('.dropdown-menu').toggleClass('display-block');
+//     $('.cart-dropdown a i').toggleClass('fa-close').toggleClass('fa-shopping-basket');
+//     $('.badge').toggleClass('display-none');
+// });
 
 /*======== 6. RS-SLIDER ========*/
   jQuery('.bannercontainerV1 .fullscreenbanner').revolution({
