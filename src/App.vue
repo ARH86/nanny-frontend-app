@@ -131,7 +131,7 @@
               <span class="icon-bar"></span>
             </button>  
             <div id="nameHeader">
-              <h1>Tot Tracker</h1>
+              <h1 id="nameTitle">Tot Tracker</h1>
             </div>
             <!-- <a class="navbar-brand" href="index.html"><img src="assets/img/logo-school.png" alt="Kidz School"></a> -->
           </div>
@@ -156,8 +156,8 @@
                   <li class=" active "><a href="/#/children">Children</a></li>
                 </ul>
               </li>
-              <li class="dropdown singleDrop color-2 active">
-                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-list-ul bg-color-2" aria-hidden="true"></i> <span class="active">Account</span></a>
+              <li class="dropdown singleDrop color-1 active">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-list-ul bg-color-1" aria-hidden="true"></i> <span class="active">Account</span></a>
                   <ul class="dropdown-menu dropdown-menu-left">
                     <li class="active"><a href="/#/signup">Create Account</a></li>
                   </ul>
@@ -377,27 +377,27 @@
 </template>
 
 <style>
-    div.company_name {
+    /*div.company_name {
                     font-size: 25px;
                     padding-top: 40px;
                     font-style: serif;
                     font-color: red;
                     border-color: green;
                     border-width: 20px;
-                    width: 500px;
+                    width: 700px;
                     text-shadow: 4px 4px 0px rgba(150, 150, 153, 1);
-                    
-    }
+                    */
+    
     div.navbar-header {
               /*  background-color: rgb(132, 190, 214);*/
                 font-size: 150px;
                 padding-left: 15px;
                 padding-right: 15px;
                 padding-top: 10px;
-                padding-bottom: 10px;
-                border: double;
+               /* padding-bottom: 10px;*/
+                /*border: double;
                 background: rgb(181, 213, 106);
-                border-color: rgb(181, 213, 106);
+                border-color: rgb(181, 213, 106);*/
                 font-style: serif;
     }
     .progress-bar-default {
@@ -406,12 +406,17 @@
       #nameHeader{
                 text-shadow: 4px 4px 0px rgba(234, 112, 102, 0.55);
                 font-family: "Times New Roman", Times, serif;
+                width: 350px;
+                height: 85px;
+                font-size: 50px;
+  }
+  #nameTitle {
+              font-size: 50px;
+              color: rgb(234, 112, 102);
+  }
 
+  
 
-      }
-      #h1 {
-        font-size: 500px;
-      }
   
     
 </style>

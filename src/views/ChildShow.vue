@@ -2,6 +2,7 @@
   <div class="ChildShow">
     <div class="container">
       <br>
+        <h1 id="childInfoTitle">Child Info</h1>
       <div v-model="child">
         <div class="column" id="child_info">
           <ul>
@@ -15,9 +16,11 @@
     </div>
      <div class="form-group">
         <!-- Button trigger modal -->
+      <div id="childDelete">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
           Delete Profile
         </button>
+      </div>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -58,6 +61,9 @@
               font-family: "Times New Roman", Times, serif;
               padding-left: 80px;
               padding-top: 70px;
+              color: black;
+              border-color: rgb(165, 151, 230);
+              text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.55);
 
             }
 
@@ -70,6 +76,17 @@
             }
             #button_delete {
                             padding-left: 300px;
+            }
+            #childInfoTitle {
+                            font-size: 60px;
+                            text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.55);
+                            color: rgb(234, 112, 102);
+                            padding-bottom: 20px;
+
+            }
+            #childDelete {
+                          padding-left: 1100px;
+                          padding-top: 20px;
             }
 
 </style>

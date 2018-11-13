@@ -1,21 +1,26 @@
 <template>
   <div class="ChildrenIndex">
-    <ul>
       <br>
-      <div class="column-8">
-        <div class="children_name_list" style="height: 500px">
+      <div class="col-md-1"></div>
+    <div class="col-md-4">
+    <ul>
+        <div class="children_name_list">
           <div v-for="child in children" v-bind:value="child.id">
             <router-link v-bind:to="'/children/' + child.id"> 
+
              <li>  {{ child.name }} </li> 
+             ~~~~~~~
+
             </router-link>
           </div>
         </div>
-      </div>
     </ul>
-    <div class="column" id="addChild">
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-5" id="addChild">
       <div class="card">
         <form>
-          <h1>Add Child</h1>
+          <h1 id="addChildTitle">Register Child</h1>
           <div class="form-group">
             <label>Name:</label>
             <input type="text" class="form-control" v-model="name">
@@ -43,6 +48,8 @@
       </div>
       <br>
     </div>
+    <div class="col-md-1"></div>
+
   </div>
 </template>
 
@@ -50,9 +57,10 @@
 
     div.ChildrenIndex{
                     padding-top: 100px;
-                    padding-bottom: 200px;
+                    /*margin-bottom: 100px;*/
+                    padding-bottom:475px;
                     background: rgb(46, 60, 67);
-                    column-count: 3;
+
     }
     div.children_name_list {
                             background-color: rgb(132, 190, 214);
@@ -63,7 +71,7 @@
                             padding-top: 20px;
                             padding-bottom: 60px;
                             width: 300px;
-                            height: 50px;
+                            height: 300px;
                             overflow: scroll;
                             border: double;
                             border-width: 10px;
@@ -77,13 +85,15 @@
 
                             
                             }
-    #addChild {
-              padding-top: 100px;
-              padding-bottom: 200px;
-              width: 650px;
-              padding-right: 200px;
+      #addChildTitle {
+                      font-size: 50px;
+                      text-shadow: 5px 4px 0px rgba(0, 0, 0, 0.55);
+                      color: rgb(234, 112, 102);
 
-    }
+                    }
+      #addChild {
+                color: rgb(234, 112, 102);
+      }
 </style>
 
 <script>

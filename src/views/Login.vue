@@ -1,12 +1,12 @@
 
 <template>
   <div class="wrapper">
-    <body id="signin">
-      <div class="login">
+    <body>
+      <div id="login">
         <div class="container">
           <form v-on:submit.prevent="submit()">
             <br>
-            <h1>Login</h1>
+            <h1 id="login_title">Login</h1>
             <ul>
               <li class="text-danger" v-for="error in errors">{{ error }}</li>
             </ul>
@@ -18,6 +18,7 @@
               <label>Password:</label>
               <input type="password" class="form-control" v-model="password">
             </div>
+            <br>
             <input type="submit" class="btn btn-primary" value="Submit">
           </form>
         </div>
@@ -28,11 +29,18 @@
 
 </template>
 <style>
-    div.login {
+    #login {
             padding-top: 150px;
             padding-bottom: 200px;
             padding-left: auto;
             padding-right: auto;
+            background-color: rgb(46, 60, 67);
+            color: rgb(234, 112, 102);
+            }
+    #login_title {
+                  color: rgb(234, 112, 102);
+                  font-size: 50px;
+                  text-shadow: 5px 4px 0px rgba(0, 0, 0, 0.55);
     }
 </style>
 

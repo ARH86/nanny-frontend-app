@@ -7,7 +7,7 @@
       <div class="container">
         <div class="card" id="signup_form">
         <form v-on:submit.prevent="submit()">
-          <h1>Signup</h1>
+          <h1 id="signup_title">Signup</h1>
           <ul>
             <li class="text-danger" v-for="error in errors">{{ error }}</li>
           </ul>
@@ -38,16 +38,24 @@
 </template>
   <style>
      div.signup {
-                background-color: red;
+                background-color: rgb(46, 60, 67);
                 padding-top: 150px;
                 padding-bottom: 200px;
                 padding-left: auto;
                 padding-right: auto;
+                color: rgb(234, 112, 102);
               
                 }
-    div.signup_background  {
+    #signup_background  {
         background-color: rgb(46, 60, 67);
                     }
+          #signup_title {
+                        font-size: 50px;
+                        padding-bottom: 25px;
+                        color: rgb(234, 112, 102);
+                        text-shadow: 5px 4px 0px rgba(0, 0, 0, 0.55);
+                        font-style: 
+          }
 
   </style>
 <script>
