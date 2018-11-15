@@ -89,7 +89,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" v-on:click="remove()" >Delete</button>
+            <button type="button" class="btn btn-primary" v-on:click="remove()" data-dismiss="modal">Delete</button>
           </div>
         </div>
       </div>
@@ -128,7 +128,7 @@
 
                         }
                         #font_feed {
-                                      color: rgb(234, 112, 102);
+                                      color: black;
                                       font-size: 20px;
                                       align-content: center;
                                       font-style: bold;

@@ -9,7 +9,7 @@
             <router-link v-bind:to="'/children/' + child.id"> 
 
              <li>  {{ child.name }} </li> 
-             ~~~~~~~
+             <span style="color:black">~~~~~~~</span>
 
             </router-link>
           </div>
@@ -129,12 +129,11 @@ export default {
       axios
         .post("http://localhost:3000/api/children", params)
         .then(response => {
-          this.$router.push("/Child" + child.id);
+          this.$router.push("/children/" + response.data.id);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
         });
-
 
     }
 

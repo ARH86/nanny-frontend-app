@@ -6,10 +6,10 @@
       <div v-model="child">
         <div class="column" id="child_info">
           <ul>
-            <li>Name: {{ child.name }} </li><br><br>
-            <li>Age: {{ child.age }} </li><br><br>
-            <li>Gender: {{ child.gender }} </li><br><br>
-            <li>Child id: {{ child.id }} </li><br>
+            <li><b>Name:</b> {{ child.name }} </li><br><br>
+            <li><b>Age:</b> {{ child.age }} </li><br><br>
+            <li><b>Gender:</b> {{ child.gender }} </li><br><br>
+            <li><b>Child id:</b> {{ child.id }} </li><br>
           </ul>
         </div>
       </div>
@@ -36,8 +36,8 @@
                 Are you sure you want to delete the child?
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" v-on:click="submit()" class="btn btn-primary">Delete Child</button>
+                <button type="button" class="btn btn-secondary" style="color:black" data-dismiss="modal">Close</button>
+                <button type="submit" v-on:click="submit()" data-dismiss="modal" class="btn btn-primary">Delete Child</button>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@
               padding-top: 70px;
               color: black;
               border-color: rgb(165, 151, 230);
-              text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.55);
+              /*text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.55);*/
 
             }
 
